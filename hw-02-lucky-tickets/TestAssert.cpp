@@ -1,6 +1,24 @@
 #include "TestAssert.h"
 
-bool TestAssert::assert(const TestParam& testParam, long long calcResult)
+#include <chrono>
+
+TestResult TestAssert::assert(const TestParam& testParam, const Counter& counter) const
 {
-	return testParam.getOut() == calcResult;
+	auto start = std::chrono::high_resolution_clock::now(); // Засекаем время
+
+	uint64_t calcResult = counter.count(testParam.getIn());
+	bool success = testParam.getOut() == calcResult;
+	
+	auto end = std::chrono::high_resolution_clock::now(); // Фиксируем завершение
+
+	// Вычисляем длительность
+	auto durationNanos = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+	uint64_t duration = durationNanos.count();
+
+	return TestResult{
+				testParam,
+				calcResult,
+				success,
+				duration
+	};
 }

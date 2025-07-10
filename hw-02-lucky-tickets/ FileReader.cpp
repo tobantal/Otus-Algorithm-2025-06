@@ -9,7 +9,7 @@ std::string FileReader::readFile(const std::string& filename) const {
         std::ifstream file(filename, std::ios::in);
 
         if (!file) {
-            throw std::runtime_error("Cannot open file: " + filename);
+            throw std::runtime_error("Cannot open file: " + filename + ". Check full path to in-, out-files.");
         }
 
         std::ostringstream content;

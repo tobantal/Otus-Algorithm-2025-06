@@ -1,8 +1,11 @@
 #pragma once
 
 #include "TestParam.h"
+#include "Counter.h"
+#include "TestResult.h"
 
 class TestAssert {
 public:
-	bool assert(const TestParam& testParam, long long calcResult);
+	TestResult assert(const TestParam& testParam, const Counter& counter) const;
 };
+

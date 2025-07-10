@@ -2,10 +2,13 @@
 
 #include <vector>
 
-class LuckyTicketCounter  {
+#include "Counter.h"
+
+class LuckyTicketCounter : public Counter {
 public:
+
 	/* Считает количество счастливых 2n-билетов */
-	long long count(int n) const;
+	long long count(int n) const override;
 
 	/* Функция вычисляет сумму квадратов элементов вектора */
 	long long sumOfSquares(const std::vector<long long>& vec) const;

@@ -10,5 +10,6 @@
 class TestParamLoader {
 public:
 	// dir - полный путь до папки с тестовыми данными (in, out)
-	std::vector <TestParam> loadTestParams(const std::string& dir);
+	// n - количество тестов для загрузки
+	std::vector <TestParam> loadTestParams(const std::string& dir, int n);
 };

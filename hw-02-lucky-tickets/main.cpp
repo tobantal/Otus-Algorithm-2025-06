@@ -1,18 +1,21 @@
 #include "TestRunner.h"
-
 #include "LuckyTicketCounter.h"
-#include <iostream>
+
+// указать полный путь до папки с тестами
+constexpr auto TEST_PARAMS_DIR = "C:\\Users\\toban\\source\\repos\\Otus-Algorithm-2025-06\\hw-02-lucky-tickets\\test-params";
+
+// количество тестов
+constexpr auto TEST_NUMBERS = 10;
 
 int main() {
 	
-
-	TestRunner testRunner;
-	testRunner.runTests();
-
-	/*
+	// class under test
 	LuckyTicketCounter luckyTicketCounter;
-	std::cout << luckyTicketCounter.count(3) << std::endl;
-	*/
+
+	// tets runner
+	TestRunner testRunner;
+	
+	testRunner.runTests(luckyTicketCounter, TEST_PARAMS_DIR, TEST_NUMBERS);
 
 	return 0;
 }
