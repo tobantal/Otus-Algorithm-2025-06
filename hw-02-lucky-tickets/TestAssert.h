@@ -4,5 +4,5 @@
 
 class TestAssert {
 public:
-	bool assert(const TestParam& testParam, int result);
+	bool assert(const TestParam& testParam, long long calcResult);
 };

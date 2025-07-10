@@ -18,5 +18,6 @@ std::string FileReader::readFile(const std::string& filename) const {
         return content.str();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
+        throw e;
     }
 }
