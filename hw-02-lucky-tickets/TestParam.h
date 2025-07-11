@@ -10,15 +10,15 @@ private:
     /* числовое представление in */
     int in;
     /* числовое представление out */
-    long long out;
+    int64_t out;
 
   public:
       TestParam() = default;
-      TestParam(const std::string& name, int in, long long out);
+      TestParam(const std::string& name, int in, int64_t out);
     
       // геттеры
     std::string getName() const;
     int getIn() const;
-    long long getOut() const;
+    int64_t getOut() const;
 
 };
