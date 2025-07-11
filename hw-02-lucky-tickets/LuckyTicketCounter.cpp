@@ -4,9 +4,9 @@
 #include <string>
 
 
-long long LuckyTicketCounter::count(int n) const {
+int64_t LuckyTicketCounter::count(int n) const {
 
-    std::vector<long long> sums = { 1LL };
+    std::vector<int64_t> sums = { 1LL };
 
     for (int i = 0; i < n; ++i) {
         sums = nextVector(sums);
@@ -16,8 +16,8 @@ long long LuckyTicketCounter::count(int n) const {
 }
 
 
-long long LuckyTicketCounter::sumOfSquares(const std::vector<long long>& vec) const {
-    long long sum = 0;
+int64_t LuckyTicketCounter::sumOfSquares(const std::vector<int64_t>& vec) const {
+    int64_t sum = 0;
     /*
     int i = 0;
     int halffSize = vec.size() / 2;
@@ -25,7 +25,7 @@ long long LuckyTicketCounter::sumOfSquares(const std::vector<long long>& vec) co
     int center = 0;
     */
 
-    for (long long val : vec) {
+    for (int64_t val : vec) {
         /*
         if (++i > halffSize) {
             center = val * val;
@@ -46,26 +46,26 @@ long long LuckyTicketCounter::sumOfSquares(const std::vector<long long>& vec) co
     return sum;
 }
 
-std::vector<long long> LuckyTicketCounter::nextVector(std::vector<long long> inVector) const {
+std::vector<int64_t> LuckyTicketCounter::nextVector(std::vector<int64_t> inVector) const {
     //printMatrix({ inVector });
 
-    std::vector<std::vector<long long>> mat = createMatrixWithPadding(inVector);
+    std::vector<std::vector<int64_t>> mat = createMatrixWithPadding(inVector);
     //printMatrix(mat);
 
-    std::vector<long long> sums = sumColumns(mat);
+    std::vector<int64_t> sums = sumColumns(mat);
     //printMatrix({ sums });
 
-    //printMatrix({ { (long long)sums.size()} });
+    //printMatrix({ { (int64_t)sums.size()} });
 
     return sums;
 }
 
-std::vector<long long> LuckyTicketCounter::sumColumns(const std::vector<std::vector<long long>>& matrix) const {
+std::vector<int64_t> LuckyTicketCounter::sumColumns(const std::vector<std::vector<int64_t>>& matrix) const {
     if (matrix.empty()) return {};
 
     size_t numRows = matrix.size();
     size_t numCols = matrix[0].size();
-    std::vector<long long> columnSums(numCols, 0);
+    std::vector<int64_t> columnSums(numCols, 0);
 
     for (size_t col = 0; col < numCols; ++col) {
         for (size_t row = 0; row < numRows; ++row) {
@@ -76,9 +76,9 @@ std::vector<long long> LuckyTicketCounter::sumColumns(const std::vector<std::vec
     return columnSums;
 }
 
-void LuckyTicketCounter::printMatrix(const std::vector<std::vector<long long>>& matrix) const {
+void LuckyTicketCounter::printMatrix(const std::vector<std::vector<int64_t>>& matrix) const {
     for (const auto& row : matrix) {
-        for (long long value : row) {
+        for (int64_t value : row) {
             std::cout << value << "\t"; // \t для выравнивания столбцов
         }
         std::cout << std::endl;
@@ -86,8 +86,8 @@ void LuckyTicketCounter::printMatrix(const std::vector<std::vector<long long>>& 
     std::cout << "------" << std::endl;
 }
 
-std::vector<long long> LuckyTicketCounter::addPadding(const std::vector<long long>& input, int zerosLeft, int zerosRight) const {
-    std::vector<long long> result;
+std::vector<int64_t> LuckyTicketCounter::addPadding(const std::vector<int64_t>& input, int zerosLeft, int zerosRight) const {
+    std::vector<int64_t> result;
 
    // Добавляем нули слева
     result.insert(result.end(), zerosLeft, 0);
@@ -101,8 +101,8 @@ std::vector<long long> LuckyTicketCounter::addPadding(const std::vector<long lon
     return result;
 }
 
-std::vector<std::vector<long long>> LuckyTicketCounter::createMatrixWithPadding(const std::vector<long long>& vec) const {
-    std::vector<std::vector<long long>> matrix;
+std::vector<std::vector<int64_t>> LuckyTicketCounter::createMatrixWithPadding(const std::vector<int64_t>& vec) const {
+    std::vector<std::vector<int64_t>> matrix;
 
     int rows_num = 10;
 

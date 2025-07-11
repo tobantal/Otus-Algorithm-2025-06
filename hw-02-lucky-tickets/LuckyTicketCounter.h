@@ -8,23 +8,23 @@ class LuckyTicketCounter : public Counter {
 public:
 
 	/* Считает количество счастливых 2n-билетов */
-	long long count(int n) const override;
+	int64_t count(int n) const override;
 
 	/* Функция вычисляет сумму квадратов элементов вектора */
-	long long sumOfSquares(const std::vector<long long>& vec) const;
+	int64_t sumOfSquares(const std::vector<int64_t>& vec) const;
 
 	/* Создание следующего вектора из текущего */
-	std::vector<long long> nextVector(std::vector<long long> inVector) const;
+	std::vector<int64_t> nextVector(std::vector<int64_t> inVector) const;
 	
 	/* Суммирует элементы по столбцам матрицы */
-	std::vector<long long> sumColumns(const std::vector<std::vector<long long>>& matrix) const;
+	std::vector<int64_t> sumColumns(const std::vector<std::vector<int64_t>>& matrix) const;
 	
 	/* Функция для вывода матрицы на экран */
-	void printMatrix(const std::vector<std::vector<long long>>& matrix) const;
+	void printMatrix(const std::vector<std::vector<int64_t>>& matrix) const;
 	
 	/* Добавляет zerosLeft слева и zerosRight справа к вектору */
-	std::vector<long long> addPadding(const std::vector<long long>& input, int zerosLeft, int zerosRight) const;
+	std::vector<int64_t> addPadding(const std::vector<int64_t>& input, int zerosLeft, int zerosRight) const;
 	
 	/* Создание матрицы из ветора со сдвигом */
-	std::vector<std::vector<long long>> createMatrixWithPadding(const std::vector<long long>& input) const;
+	std::vector<std::vector<int64_t>> createMatrixWithPadding(const std::vector<int64_t>& input) const;
 };
