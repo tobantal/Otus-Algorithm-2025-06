@@ -10,8 +10,10 @@ if (POLICY CMP0141)
 endif()
 
 #project ("Otus-Algorithm-2025-06-hw-01")
-project("hw-02-lucky-tickets")
+#project("hw-02-lucky-tickets")
+project("hw-03-hw-03-algebraic-algorithms")
 
 # Включите подпроекты.
 #add_subdirectory ("Otus-Algorithm-2025-06-hw-01")
-add_subdirectory("hw-02-lucky-tickets")
+#add_subdirectory("hw-02-lucky-tickets")
+add_subdirectory("hw-03-algebraic-algorithms")
