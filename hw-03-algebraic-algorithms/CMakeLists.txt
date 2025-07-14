@@ -1,5 +1,12 @@
-﻿add_executable (hw-03-algebraic-algorithms "main.cpp" "core/FileReader.h" "core/ FileReader.cpp" "core/TestAssert.h" "core/TestParam.cpp" "core/TestParamLoader.cpp"  "core/TestAssert.cpp" "core/TestRunner.h" "core/TestRunner.cpp"  "core/Counter.h" "core/TestResult.h")
+﻿project(AlgebraicAlgorithms)
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET hw-03-algebraic-algorithms PROPERTY CXX_STANDARD 17)
-endif()
+# Подключаем include
+include_directories(include)
+
+# Основное приложение
+add_executable(AlgebraicAlgorithms
+    src/main.cpp
+ "include/MathSettings.h" "include/SquareEquationSolver.h" "src/SquareEquationSolver.cpp")
+
+# Добавляем тесты
+add_subdirectory(tests)

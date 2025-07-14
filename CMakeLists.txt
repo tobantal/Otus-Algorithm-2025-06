@@ -1,7 +1,9 @@
 ﻿# CMakeList.txt: файл проекта CMake верхнего уровня; проведите глобальную конфигурацию
 # и включите сюда подпроекты.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.14)
+
+set(CMAKE_CXX_STANDARD 17)
 
 # Включение горячей перезагрузки для компиляторов MSVC, если поддерживается.
 if (POLICY CMP0141)
@@ -9,11 +11,22 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-#project ("Otus-Algorithm-2025-06-hw-01")
-#project("hw-02-lucky-tickets")
-project("hw-03-hw-03-algebraic-algorithms")
+project ("Otus-Algorithm-2025-06")
 
-# Включите подпроекты.
+
+# GoogleTest setup
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+
+# Add subproject
 #add_subdirectory ("Otus-Algorithm-2025-06-hw-01")
 #add_subdirectory("hw-02-lucky-tickets")
 add_subdirectory("hw-03-algebraic-algorithms")
