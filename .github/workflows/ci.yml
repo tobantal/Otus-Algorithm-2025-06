@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, hw-03-algebraic_algorithms ]
   pull_request:
     branches: [ master ]
 
