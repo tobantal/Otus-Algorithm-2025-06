@@ -1,6 +1,8 @@
 #include "GoldenRatioFibCounter.h"
 #include <cmath>
 #include <string>
+#include <cstdint>
+#include <cstdlib> // для std::stoll
 
 
 std::string GoldenRatioFibCounter::compute(const std::string& n_str) const {
