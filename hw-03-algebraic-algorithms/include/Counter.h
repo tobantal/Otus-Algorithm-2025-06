@@ -3,13 +3,13 @@
 #include <string>
 #include <stdexcept>
 
-/* ¬ычисл€ет что-то в зависимости от n */
+// јбстрактный интерфейс дл€ классов, считающих что-либо по числу n.
 class Counter {
 public:
-	// n_str Ч входной параметр (целое число)
-	virtual std::string compute(const std::string& n_str) const {
-		throw "Counter::compute not implemented";
-	}
+    // n_str Ч строка, представл€юща€ целое число (ожидаетс€ uint64_t)
+    virtual std::string compute(const std::string& n_str) const {
+        throw "Counter::compute not implemented";
+    }
 
-	~Counter() = default;
+    virtual ~Counter() = default;
 };

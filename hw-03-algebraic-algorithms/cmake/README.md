@@ -1,9 +1,21 @@
-# Описание параметров AutoGenerateTest.cmake
+п»ї# README
+
+## РћРїРёСЃР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ AutoGenerateTest.cmake
 
 auto_generate_tests(
-DATA_DIR path/to/data <путь до папки с параметрами тестов: in, out-файлами>
-CLASS_NAME MyClass <имя класса, который тестируется>
-METHOD_NAME myMethod <имя метода, который тестируется>
-OUTPUT_FILE path/to/output_test.cpp <путь до сгенерированного файла с тестами>
-STRONG_ASSERT 1 (точность сравнения 1 - строкое равенство, 0 - сравнение с точностью EPS)
+DATA_DIR path/to/data <РїСѓС‚СЊ РґРѕ РїР°РїРєРё СЃ РїР°СЂР°РјРµС‚СЂР°РјРё С‚РµСЃС‚РѕРІ: in, out-С„Р°Р№Р»Р°РјРё>
+CLASS_NAME MyClass <РёРјСЏ РєР»Р°СЃСЃР°, РєРѕС‚РѕСЂС‹Р№ С‚РµСЃС‚РёСЂСѓРµС‚СЃСЏ>
+METHOD_NAME myMethod <РёРјСЏ РјРµС‚РѕРґР°, РєРѕС‚РѕСЂС‹Р№ С‚РµСЃС‚РёСЂСѓРµС‚СЃСЏ>
+OUTPUT_FILE path/to/output_test.cpp <РїСѓС‚СЊ РґРѕ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅРѕРіРѕ С„Р°Р№Р»Р° СЃ С‚РµСЃС‚Р°РјРё>
+STRONG_ASSERT 1 (С‚РѕС‡РЅРѕСЃС‚СЊ СЃСЂР°РІРЅРµРЅРёСЏ 1 - СЃС‚СЂРѕРіРѕРµ СЂР°РІРµРЅСЃС‚РІРѕ, 0 - СЃСЂР°РІРЅРµРЅРёРµ СЃ С‚РѕС‡РЅРѕСЃС‚СЊСЋ EPS)
+)
+
+## РџСЂРёРјРµСЂ
+
+auto_generate_tests(
+DATA_DIR ${PROJECT_SOURCE_DIR}/test-resources/5.Primes
+CLASS_NAME LinearSievePrimeCounter
+METHOD_NAME compute
+OUTPUT_FILE ${OUTPUT_TEST_DIR}/LinearSievePrimeCounterTests.cpp
+STRONG_ASSERT 1
 )

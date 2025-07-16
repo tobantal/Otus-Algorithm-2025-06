@@ -49,7 +49,7 @@ while(TRUE)
         else()
         file(APPEND "${GENERATED_FILE}" "    EXPECT_NEAR(service.${ARG_METHOD_NAME}(${PARAMS_STR}), ${EXPECTED_RESULT}, EPS);\n")
         endif()
-        
+
         file(APPEND "${GENERATED_FILE}" "}\n\n")
 
         math(EXPR INDEX "${INDEX} + 1")
