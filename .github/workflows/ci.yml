@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ master, hw-03-algebraic_algorithms ]
+    branches: [ master, hw-04-array-queue ]
   pull_request:
     branches: [ master ]
 

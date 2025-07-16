@@ -27,4 +27,5 @@ enable_testing()
 # Add subprojects
 #add_subdirectory ("Otus-Algorithm-2025-06-hw-01")
 #add_subdirectory("hw-02-lucky-tickets")
-add_subdirectory("hw-03-algebraic-algorithms")
+#add_subdirectory("hw-03-algebraic-algorithms")
+add_subdirectory("hw-04-array-queue")
