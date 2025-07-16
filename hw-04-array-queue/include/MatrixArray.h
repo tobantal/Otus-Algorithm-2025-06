@@ -1,5 +1,4 @@
-#ifndef MATRIXARRAY_H
-#define MATRIXARRAY_H
+#pragma once
 
 #include "Array.h"
 #include <stdexcept>
@@ -83,4 +82,3 @@ public:
     }
 };
 
-#endif // MATRIXARRAY_H

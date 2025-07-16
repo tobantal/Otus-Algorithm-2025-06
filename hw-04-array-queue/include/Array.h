@@ -1,6 +1,4 @@
-// Array.h
-#ifndef ARRAY_H
-#define ARRAY_H
+#pragma once
 
 // Абстрактный класс динамического массива
 template<typename T>
@@ -20,5 +18,3 @@ public:
     // Текущий размер массива
     virtual int size() const = 0;
 };
-
-#endif // ARRAY_H

@@ -2,7 +2,7 @@
 #include "SingleArray.h"
 
 // Добавление в конец
-TEST(SingleArrayBasicTests, AddToEnd) {
+TEST(SingleArrayTest, AddToEnd) {
     SingleArray<int> array;
     array.add(10, 0);
     array.add(20, 1);
@@ -15,7 +15,7 @@ TEST(SingleArrayBasicTests, AddToEnd) {
 }
 
 // Добавление в начало
-TEST(SingleArrayBasicTests, AddToBeginning) {
+TEST(SingleArrayTest, AddToBeginning) {
     SingleArray<int> array;
     array.add(10, 0);
     array.add(20, 0);
@@ -28,7 +28,7 @@ TEST(SingleArrayBasicTests, AddToBeginning) {
 }
 
 // Добавление в середину
-TEST(SingleArrayBasicTests, AddToMiddle) {
+TEST(SingleArrayTest, AddToMiddle) {
     SingleArray<int> array;
     array.add(1, 0);
     array.add(3, 1);
@@ -41,7 +41,7 @@ TEST(SingleArrayBasicTests, AddToMiddle) {
 }
 
 // Удаление элемента
-TEST(SingleArrayBasicTests, RemoveElement) {
+TEST(SingleArrayTest, RemoveElement) {
     SingleArray<int> array;
     array.add(1, 0);
     array.add(2, 1);
@@ -55,7 +55,7 @@ TEST(SingleArrayBasicTests, RemoveElement) {
 }
 
 // Удаление с начала
-TEST(SingleArrayBasicTests, RemoveFromStart) {
+TEST(SingleArrayTest, RemoveFromStart) {
     SingleArray<int> array;
     array.add(100, 0);
     array.add(200, 1);
@@ -66,7 +66,7 @@ TEST(SingleArrayBasicTests, RemoveFromStart) {
 }
 
 // Удаление с конца
-TEST(SingleArrayBasicTests, RemoveFromEnd) {
+TEST(SingleArrayTest, RemoveFromEnd) {
     SingleArray<int> array;
     array.add(5, 0);
     array.add(10, 1);
@@ -77,20 +77,20 @@ TEST(SingleArrayBasicTests, RemoveFromEnd) {
 }
 
 // Ошибка при add за пределами диапазона
-TEST(SingleArrayBasicTests, AddOutOfBounds) {
+TEST(SingleArrayTest, AddOutOfBounds) {
     SingleArray<int> array;
     EXPECT_THROW(array.add(1, 1), std::out_of_range); // пустой, можно только в 0
 }
 
 // Ошибка при remove за пределами диапазона
-TEST(SingleArrayBasicTests, RemoveOutOfBounds) {
+TEST(SingleArrayTest, RemoveOutOfBounds) {
     SingleArray<int> array;
     array.add(1, 0);
     EXPECT_THROW(array.remove(1), std::out_of_range);
 }
 
 // Ошибка при get за пределами диапазона
-TEST(SingleArrayBasicTests, GetOutOfBounds) {
+TEST(SingleArrayTest, GetOutOfBounds) {
     SingleArray<int> array;
     EXPECT_THROW(array.get(0), std::out_of_range);
 }

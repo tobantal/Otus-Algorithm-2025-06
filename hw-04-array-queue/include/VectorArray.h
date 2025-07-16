@@ -1,5 +1,4 @@
-#ifndef VECTORARRAY_H
-#define VECTORARRAY_H
+#pragma once
 
 #include "Array.h"
 #include <stdexcept>
@@ -62,5 +61,3 @@ public:
         return count;
     }
 };
-
-#endif // VECTORARRAY_H

@@ -1,5 +1,4 @@
-#ifndef FACTORARRAY_H
-#define FACTORARRAY_H
+#pragma once
 
 #include "Array.h"
 #include <stdexcept>
@@ -64,4 +63,3 @@ public:
     }
 };
 
-#endif // FACTORARRAY_H

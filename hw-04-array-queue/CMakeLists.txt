@@ -6,7 +6,7 @@ include_directories(include)
 # Основное приложение
 add_executable(ArrayQueue
     src/main.cpp
- "include/Array.h" "include/SingleArray.h" "src/SingleArray.cpp" "tests/SingleArrayTest.cpp" "tests/all_test_runner.cpp" "include/VectorArray.h" "include/FactorArray.h" "include/MatrixArray.h" "src/FactorArray.cpp" "src/MatrixArray.cpp")
+ "include/Array.h" "include/SingleArray.h" "src/SingleArray.cpp" "include/VectorArray.h" "include/FactorArray.h" "include/MatrixArray.h" "src/FactorArray.cpp" "src/MatrixArray.cpp")
 
 # Добавляем тесты
 add_subdirectory(tests)
