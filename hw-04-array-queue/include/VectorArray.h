@@ -10,16 +10,16 @@ private:
     T* data;
     int capacity;
     int count;
-    const int vector = 10; // шаг наращивания памяти
+    const int capacityIncr = 10; // шаг наращивания памяти
 
     void resize() {
-        T* newData = new T[capacity + vector];
+        T* newData = new T[capacity + capacityIncr];
         for (int i = 0; i < count; ++i) {
             newData[i] = data[i];
         }
         delete[] data;
         data = newData;
-        capacity += vector;
+        capacity += capacityIncr;
     }
 
 public:

@@ -4,7 +4,7 @@ set(TEST_SOURCES
     "VectorArrayTest.cpp"
     "FactorArrayTest.cpp"
     "MatrixArrayTest.cpp"
-)
+ "LinkedListTests.cpp")
 
 add_executable(ArrayQueueTests ${TEST_SOURCES}
     ../src/SingleArray.cpp

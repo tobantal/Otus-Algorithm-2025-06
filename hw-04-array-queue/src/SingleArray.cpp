@@ -20,7 +20,7 @@ void SingleArray<T>::resize() {
     }
     delete[] data;
     data = newData;
-    capacity += 1;
+    ++capacity;
 }
 
 // Добавление элемента по индексу
