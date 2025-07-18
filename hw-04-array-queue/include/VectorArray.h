@@ -30,7 +30,7 @@ public:
     }
 
     void add(T item, int index) override {
-        check_index_for_insert(index, count);
+        Array<T>::check_index_for_insert(index, count);
 
         if (count >= capacity) resize();
 
@@ -43,7 +43,7 @@ public:
     }
 
     T remove(int index) override {
-        check_index(index, count);
+        Array<T>::check_index(index, count);
 
         T removed = data[index];
         for (int i = index; i < count - 1; ++i) {
@@ -54,7 +54,7 @@ public:
     }
 
     T get(int index) const override {
-        check_index(index, count);
+        Array<T>::check_index(index, count);
         return data[index];
     }
 

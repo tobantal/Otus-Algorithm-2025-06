@@ -35,7 +35,7 @@ public:
     }
 
     void add(T item, int index) override {
-        check_index_for_insert(index, count);
+        Array<T>::check_index_for_insert(index, count);
 
         if (count == blockCount * blockSize) {
             allocateNewBlock();
@@ -51,7 +51,7 @@ public:
     }
 
     T remove(int index) override {
-        check_index(index, count);
+        Array<T>::check_index(index, count);
 
         T removed = get(index);
 
@@ -64,7 +64,7 @@ public:
     }
 
     T get(int index) const override {
-        check_index(index, count);;
+        Array<T>::check_index(index, count);;
 
         int block = index / blockSize;
         int offset = index % blockSize;

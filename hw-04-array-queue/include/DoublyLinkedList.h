@@ -32,7 +32,7 @@ public:
     }
 
     void add(T item, int index) override {
-        check_index_for_insert(index, count);
+        Array<T>::check_index_for_insert(index, count);
 
         if (index == 0) {
             Node* newNode = new Node(item, nullptr, head);
@@ -55,7 +55,7 @@ public:
     }
 
     T remove(int index) override {
-        check_index(index, count);
+        Array<T>::check_index(index, count);
 
         Node* toRemove = getNode(index);
         T value = toRemove->data;
@@ -72,7 +72,7 @@ public:
     }
 
     T get(int index) const override {
-        check_index(index, count);
+        Array<T>::check_index(index, count);
         return getNode(index)->data;
     }
 
