@@ -26,9 +26,7 @@ void SingleArray<T>::resize() {
 // Добавление элемента по индексу
 template<typename T>
 void SingleArray<T>::add(T item, int index) {
-    if (index < 0 || index > count) {
-        throw std::out_of_range("Index out of bounds");
-    }
+    Array<T>::check_index_for_insert(index, count);
 
     if (count >= capacity) {
         resize();
@@ -45,9 +43,7 @@ void SingleArray<T>::add(T item, int index) {
 // Удаление элемента по индексу
 template<typename T>
 T SingleArray<T>::remove(int index) {
-    if (index < 0 || index >= count) {
-        throw std::out_of_range("Index out of bounds");
-    }
+    Array<T>::check_index(index, count);
 
     T removed = data[index];
     for (int i = index; i < count - 1; ++i) {
@@ -60,9 +56,7 @@ T SingleArray<T>::remove(int index) {
 // Получение элемента по индексу
 template<typename T>
 T SingleArray<T>::get(int index) const {
-    if (index < 0 || index >= count) {
-        throw std::out_of_range("Index out of bounds");
-    }
+    Array<T>::check_index(index, count);
     return data[index];
 }
 

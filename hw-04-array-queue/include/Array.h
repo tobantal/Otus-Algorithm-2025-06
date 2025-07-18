@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdexcept>
+
 // Интерфейс динамического массива
 template<typename T>
 class Array {
