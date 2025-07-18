@@ -13,6 +13,7 @@
 using namespace std;
 using namespace std::chrono;
 
+// Benchmarking results structure
 struct BenchmarkResult {
     std::string name;
     long long add_front, add_middle, add_end;
@@ -20,6 +21,7 @@ struct BenchmarkResult {
     long long remove_front, remove_middle, remove_end;
 };
 
+// Function to benchmark an array-like structure
 template<typename ArrayType>
 BenchmarkResult benchmark_array(const std::string& name, int N) {
     ArrayType arr;
@@ -135,6 +137,7 @@ tr:last-child td {
     out.close();
 }
 
+// Main function to run benchmarks and generate report
 int main() {
     const int N = 10000;
 

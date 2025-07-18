@@ -10,9 +10,7 @@ set(TEST_SOURCES
     "SpaceArrayTest.cpp" 
 )
 
-add_executable(ArrayQueueTests ${TEST_SOURCES}
-    ../src/SingleArray.cpp    
- )
+add_executable(ArrayQueueTests ${TEST_SOURCES})
 
 target_include_directories(ArrayQueueTests PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(ArrayQueueTests gtest_main)
