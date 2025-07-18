@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ master, hw-04-array-queue ]
+    branches: [ master, hw-05-bits ]
   pull_request:
     branches: [ master ]
 
