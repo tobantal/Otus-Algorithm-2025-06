@@ -26,7 +26,7 @@ private:
 		// Переназначаем указатель на новый массив
         data = newData;
         // Увеличиваем емкость на 1
-        ++capacity
+        ++capacity;
     }
 
 public:
