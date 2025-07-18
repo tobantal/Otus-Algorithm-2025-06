@@ -6,7 +6,7 @@ set(TEST_SOURCES
     "MatrixArrayTest.cpp"
     "LinkedListTests.cpp" 
     "DoublyLinkedListTests.cpp" 
-)
+ "PriorityQueueArrayListTest.cpp")
 
 add_executable(ArrayQueueTests ${TEST_SOURCES}
     ../src/SingleArray.cpp    

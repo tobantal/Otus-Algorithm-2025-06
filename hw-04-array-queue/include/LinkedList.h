@@ -29,6 +29,8 @@ public:
         }
     }
 
+
+
     void add(T item, int index) override {
         Array<T>::check_index_for_insert(index, count);
 
@@ -72,6 +74,33 @@ public:
 
     int size() const override {
         return count;
+    }
+
+    // Конструктор копирования
+    LinkedList(const LinkedList& other) : head(nullptr), count(0) {
+        Node* current = other.head;
+        while (current) {
+            add(current->data, count);
+            current = current->next;
+        }
+    }
+
+    // Оператор присваивания
+    LinkedList& operator=(const LinkedList& other) {
+        if (this != &other) {
+            while (head) {
+                Node* tmp = head;
+                head = head->next;
+                delete tmp;
+            }
+            count = 0;
+            Node* current = other.head;
+            while (current) {
+                add(current->data, count);
+                current = current->next;
+            }
+        }
+        return *this;
     }
 
 private:

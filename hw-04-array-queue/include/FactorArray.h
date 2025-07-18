@@ -37,6 +37,31 @@ public:
         delete[] data;
     }
 
+    // Конструктор копирования
+    FactorArray(const FactorArray& other)
+        : data(nullptr), capacity(other.capacity), count(other.count) {
+        if (capacity > 0) {
+            data = new T[capacity];
+            for (int i = 0; i < count; ++i) {
+                data[i] = other.data[i];
+            }
+        }
+    }
+
+    // Оператор присваивания
+    FactorArray& operator=(const FactorArray& other) {
+        if (this != &other) {
+            delete[] data;
+            capacity = other.capacity;
+            count = other.count;
+            data = (capacity > 0) ? new T[capacity] : nullptr;
+            for (int i = 0; i < count; ++i) {
+                data[i] = other.data[i];
+            }
+        }
+        return *this;
+    }
+
     void add(T item, int index) override {
         Array<T>::check_index_for_insert(index, count);
         if (count >= capacity) resize();
