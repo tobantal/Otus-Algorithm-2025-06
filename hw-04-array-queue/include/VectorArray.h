@@ -30,7 +30,8 @@ public:
     }
 
     void add(T item, int index) override {
-        if (index < 0 || index > count) throw std::out_of_range("Index out of bounds");
+        check_index_for_insert(index, count);
+
         if (count >= capacity) resize();
 
         for (int i = count; i > index; --i) {
@@ -42,7 +43,7 @@ public:
     }
 
     T remove(int index) override {
-        if (index < 0 || index >= count) throw std::out_of_range("Index out of bounds");
+        check_index(index, count);
 
         T removed = data[index];
         for (int i = index; i < count - 1; ++i) {
@@ -53,7 +54,7 @@ public:
     }
 
     T get(int index) const override {
-        if (index < 0 || index >= count) throw std::out_of_range("Index out of bounds");
+        check_index(index, count);
         return data[index];
     }
 

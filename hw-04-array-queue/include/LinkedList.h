@@ -30,8 +30,7 @@ public:
     }
 
     void add(T item, int index) override {
-        if (index < 0 || index > count)
-            throw std::out_of_range("Index out of bounds");
+        check_index_for_insert(index, count);
 
         if (index == 0) {
             head = new Node(item, head);
@@ -45,8 +44,7 @@ public:
     }
 
     T remove(int index) override {
-        if (index < 0 || index >= count)
-            throw std::out_of_range("Index out of bounds");
+        check_index(index, count);
 
         Node* toRemove;
 
@@ -67,8 +65,7 @@ public:
     }
 
     T get(int index) const override {
-        if (index < 0 || index >= count)
-            throw std::out_of_range("Index out of bounds");
+        check_index(index, count);
 
         return getNode(index)->data;
     }

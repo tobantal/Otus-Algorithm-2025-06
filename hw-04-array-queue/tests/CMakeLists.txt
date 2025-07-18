@@ -4,13 +4,12 @@ set(TEST_SOURCES
     "VectorArrayTest.cpp"
     "FactorArrayTest.cpp"
     "MatrixArrayTest.cpp"
- "LinkedListTests.cpp")
+    "LinkedListTests.cpp" 
+    "DoublyLinkedListTests.cpp" 
+)
 
 add_executable(ArrayQueueTests ${TEST_SOURCES}
-    ../src/SingleArray.cpp
-    ../src/VectorArray.cpp
-    ../src/FactorArray.cpp
-    ../src/MatrixArray.cpp
+    ../src/SingleArray.cpp    
  )
 
 target_include_directories(ArrayQueueTests PRIVATE ${PROJECT_SOURCE_DIR}/include)

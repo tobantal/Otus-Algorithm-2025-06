@@ -1,6 +1,6 @@
 #pragma once
 
-// Абстрактный класс динамического массива
+// Интерфейс динамического массива
 template<typename T>
 class Array {
 public:
@@ -17,4 +17,17 @@ public:
 
     // Текущий размер массива
     virtual int size() const = 0;
+
+protected:
+	// Проверка индекса для доступа и удаления
+    void check_index(int index, int count) const {
+        if (index < 0 || index >= count)
+            throw std::out_of_range("Index out of bounds");
+    }
+
+	// Проверка индекса для вставки
+    void check_index_for_insert(int index, int count) const {
+        if (index < 0 || index > count)
+            throw std::out_of_range("Index out of bounds");
+    }
 };
