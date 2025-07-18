@@ -31,3 +31,20 @@ TEST(FactorArrayTest, ExceptionTest) {
     EXPECT_THROW(array.get(1), std::out_of_range);
     EXPECT_THROW(array.remove(0), std::out_of_range);
 }
+
+TEST(FactorArrayTest, ResizeIncreasesCapacity) {
+    FactorArray<int> array;
+
+    // Добавляем элементы, чтобы вызвать resize несколько раз
+    for (int i = 0; i < 10; ++i) {
+        array.add(i, i);
+    }
+
+    // Проверяем размер массива
+    EXPECT_EQ(array.size(), 10);
+
+    // Проверяем, что все элементы на месте
+    for (int i = 0; i < 10; ++i) {
+        EXPECT_EQ(array.get(i), i);
+    }
+}
