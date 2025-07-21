@@ -1,21 +1,30 @@
-cmake_minimum_required(VERSION 3.15)
 project(hw-05-bits)
+
+cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(King src/King.cpp)
-add_library(Knight src/Knight.cpp)
+# Подключаем интерфейсы из папки include
+include_directories(include)
 
-target_include_directories(King PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(Knight PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(CPP_SOURCES
+    src/King.cpp
+    src/Knight.cpp
+)
 
-# TODO: Add tests for BitUtils
-# create all_test_runner.cpp
+set(TEST_SOURCES
+    tests/all_test_runner.cpp
+    tests/BitUtilsTest.cpp
+    tests/KingMovesTest.cpp
+    tests/KnightTest.cpp
+)
 
-add_executable(KingTest tests/KingMovesTest.cpp)
-add_executable(KnightTest tests/KnightTest.cpp)
-#add_executable(BitUtilsTest tests/BitUtilsTest.cpp)
-target_link_libraries(KingTest King gtest_main)
-target_link_libraries(KnightTest Knight gtest_main)
-#target_link_libraries(BitUtilsTest gtest_main)
+add_executable(MoveableTests ${CPP_SOURCES} ${TEST_SOURCES})
+
+
+target_include_directories(MoveableTests PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(MoveableTests gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(MoveableTests)
